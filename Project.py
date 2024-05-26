@@ -86,9 +86,9 @@ while True:
                 if player_choise1 == str(D):
                     player_choise2 = input('Введите x квадратного кравнения: ')
                     if player_choise2 == str(x):
-                        print('Вы правильно решили квадратное уравнение!') 
+                        print('Правильно!') 
                     else:
-                        print('Вы неправильно решили квадратное уравнение! Попробуйте сонва!')
+                        print('Неправильно!')
                 else:
                     print(f'Неверно, дискриминант равен {D}')   
             elif D < 0:
@@ -96,7 +96,7 @@ while True:
                 print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
                 player_choise1 = input('Введите дискриминант квадратного уравнения: ')
                 if player_choise1 == str(D):
-                    print('Правильно! Корней нет')
+                    print('Правильно!', x)
                 else:
                     print(f'Неверно, дискриминант равен {D}')
             else:
