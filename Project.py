@@ -103,7 +103,9 @@ while True:
                 print('error') #подстраховка
             end_cycle = input('Хотите попробовать еще раз? ')
             match end_cycle:
-                case 'нет':
+                case 'да':
+                    continue
+                case _:
                     break 
         case _:
             print('Выберете один из существующих уровней сложности!')
