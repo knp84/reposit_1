@@ -41,17 +41,13 @@ while True:
             a = randint(1,10)
             b = randint(-100,100)
             z = -b
-            x = z / a # решения уравнения 
+            x = z / a               # решения уравнения 
             if b > 0:
                 k = '+'
             else:
-                k = '' # знаки в уравнении 
+                k = ''              # знаки в уравнении 
             print(f'{a}x{k}{b} = 0')
             prov = float(input('Введите x: '))
-            if prov == round(x):
-                print('yes', x)
-            else:
-                print(x)
             end_cycle = input('Хотите попробовать еще раз? ')
             match end_cycle:
                 case 'нет':
@@ -59,13 +55,11 @@ while True:
         case '4':
             a = randint(-9,9)
             b = randint(-9,9)
-            c = randint(-9,9)
+            c = randint(1,9)
             sign1 = ''
-            sign2 = ''
+            sign2 = '+'
             if b >= 0:
                 sign1 = '+'
-            if c >= 0:
-                sign2 = '+'
             rand = randint(1,2)
             urav = [f'{a}x^2 {sign1}{b}x {sign2}{c} = 0']
             spic = tuple(range(1, 101)) 
@@ -74,7 +68,7 @@ while True:
                 x1 = (-b - sqrt(D)) / (2 * a)
                 x2 = (-b + sqrt(D)) / (2 * a)
                 if sqrt(D) in spic:                #ограничивает дискриминант
-                    print(urav)
+                    print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
                     x1x2 = x1, x2
                     player_choise1 = input('Введите дискриминант квадратного уравнения: ')
                     if player_choise1 == str(D):
@@ -87,10 +81,10 @@ while True:
                         print(f'Неверно, дискриминант равен {D}')  
             elif D == 0:
                 x = -b / (2 * a)
-                print(urav)
+                print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
                 player_choise1 = input('Введите дискриминант квадратного уравнения: ')
                 if player_choise1 == str(D):
-                    player_choise2 = input('Введите x1 и x2 квадратного кравнения: ')
+                    player_choise2 = input('Введите x квадратного кравнения: ')
                     if player_choise2 == str(x):
                         print('Вы правильно решили квадратное уравнение!') 
                     else:
@@ -99,7 +93,7 @@ while True:
                     print(f'Неверно, дискриминант равен {D}')   
             elif D < 0:
                 x = 'Корней нет'
-                print(urav)
+                print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
                 player_choise1 = input('Введите дискриминант квадратного уравнения: ')
                 if player_choise1 == str(D):
                     print('Правильно! Корней нет')
