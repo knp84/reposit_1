@@ -1,7 +1,6 @@
 from math import sqrt
 from random import randint
 choise_dif = input('Выберите сложность задачи от 1 до 4: ') 
-    else:
 match choise_dif: 
     case '1':    
         a = randint(0,100)
