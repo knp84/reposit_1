@@ -67,14 +67,13 @@ while True:
             if c >= 0:
                 sign2 = '+'
             rand = randint(1,2)
-            urav = [f'{a}x^2 {sign1}{b}x {sign2}{c} = 0']
             spic = tuple(range(1, 101)) 
             D = (b ** 2) - (4 * a * c)
             if D > 0:
                 x1 = (-b - sqrt(D)) / (2 * a)
                 x2 = (-b + sqrt(D)) / (2 * a)
                 if sqrt(D) in spic:                #ограничивает дискриминант
-                    print(urav)
+                    print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
                     x1x2 = x1, x2
                     try:
                         player_choise1 = int(input('Введите дискриминант квадратного уравнения: '))
@@ -90,7 +89,7 @@ while True:
                         print('Вы уверены что ввели число?') 
             elif D == 0:
                 x = -b / (2 * a)
-                print(urav)
+                print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
                 try:
                     player_choise1 = int(input('Введите дискриминант квадратного уравнения: '))
                     if player_choise1 == D:
@@ -105,7 +104,7 @@ while True:
                     print('Вы уверены что ввели число?')
             elif D < 0:
                 x = 'Корней нет'
-                print(urav)
+                print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
                 try:
                     player_choise1 = int(input('Введите дискриминант квадратного уравнения: '))
                     if player_choise1 == D:
