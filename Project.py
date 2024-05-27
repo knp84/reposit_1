@@ -8,8 +8,8 @@ while True:
             b = randint(0,100)
             plus = a + b
             print(f'Введите сумму чисел {a} и {b}: ')
-            player_choise = int(input())
             try:
+                player_choise = int(input())
                 if player_choise == plus:
                     print(f'да, {a} + {b} = {plus}')
                 else:
@@ -25,8 +25,8 @@ while True:
             b = randint(1,10)
             mult = a * b
             print(f'Введите произведение чисел {a} и {b}: ')
-            player_choise = int(input())
             try:
+                player_choise = int(input())
                 if player_choise == mult:
                     print(f'да, {a} * {b} = {mult}')
                 else:
