@@ -13,15 +13,15 @@ while True:
                 if player_choise == plus:
                     print(f'да, {a} + {b} = {plus}')
                 else:
-                    print('Неверный ответ!', plus)
-                end_cycle = input('Хотите попробовать еще раз? ')
-                match end_cycle:
-                    case 'да':
-                        continue
-                    case _:
-                        break   
+                    print('Неверный ответ!', plus)  
             except:
                 print('Вы уверены что ввели число? ') 
+            end_cycle = input('Хотите попробовать еще раз? ')   
+            match end_cycle:
+                case 'да':
+                    continue
+                case _:
+                    break   
         case '2':                         
             a = randint(0,10)
             b = randint(1,10)
@@ -33,14 +33,15 @@ while True:
                     print(f'да, {a} * {b} = {mult}')
                 else:
                     print('Неверный ответ!', mult)
-                end_cycle = input('Хотите попробовать еще раз? ')
-                match end_cycle:
-                    case 'да':
-                        continue
-                    case _:
-                        break   
             except:
-                print('Вы уверены что ввели число?') 
+                print('Вы уверены что ввели число?')    
+            end_cycle = input('Хотите попробовать еще раз? ')
+            match end_cycle:
+                case 'да':
+                    continue
+                case _:
+                    break   
+             
         case '3':
             a = randint(1,10)
             b = randint(-100,100)
