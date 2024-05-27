@@ -16,7 +16,9 @@ while True:
                     print('Неверный ответ!', plus)
                 end_cycle = input('Хотите попробовать еще раз? ')
                 match end_cycle:
-                    case 'нет':
+                    case 'да':
+                        continue
+                    case _:
                         break   
             except:
                 print('Вы уверены что ввели число? ') 
@@ -33,8 +35,10 @@ while True:
                     print('Неверный ответ!', mult)
                 end_cycle = input('Хотите попробовать еще раз? ')
                 match end_cycle:
-                    case 'нет':
-                        break  
+                    case 'да':
+                        continue
+                    case _:
+                        break   
             except:
                 print('Вы уверены что ввели число?') 
         case '3':
@@ -48,6 +52,10 @@ while True:
                 k = ''              # знаки в уравнении 
             print(f'{a}x{k}{b} = 0')
             prov = float(input('Введите x: '))
+            if prov == round(x):
+                print('Верный ответ!')
+            else:
+                print('Неверный ответ!', x)
             end_cycle = input('Хотите попробовать еще раз? ')
             match end_cycle:
                 case 'нет':
@@ -61,7 +69,6 @@ while True:
             if b >= 0:
                 sign1 = '+'
             rand = randint(1,2)
-            urav = [f'{a}x^2 {sign1}{b}x {sign2}{c} = 0']
             spic = tuple(range(1, 101)) 
             D = (b ** 2) - (4 * a * c)
             if D > 0:
@@ -69,10 +76,10 @@ while True:
                 x2 = (-b + sqrt(D)) / (2 * a)
                 if sqrt(D) in spic:                #ограничивает дискриминант
                     print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
-                    x1x2 = x1, x2
+                    x1x2 = min(x1, x2), max(x1, x2)
                     player_choise1 = input('Введите дискриминант квадратного уравнения: ')
                     if player_choise1 == str(D):
-                        player_choise2 = input('Верно! Введите x1 и x2 квадратного кравнения: ')
+                        player_choise2 = input('Верно! Введите x1 и x2 в порядке возрастания: ')
                         if player_choise2 == str(x1x2):
                             print('Правильно!') 
                         else:
