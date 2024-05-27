@@ -16,7 +16,9 @@ while True:
                     print('Неверный ответ!', plus)
                 end_cycle = input('Хотите попробовать еще раз? ')
                 match end_cycle:
-                    case 'нет':
+                    case 'да':
+                        continue
+                    case _:
                         break   
             except:
                 print('Вы уверены что ввели число? ') 
@@ -33,25 +35,27 @@ while True:
                     print('Неверный ответ!', mult)
                 end_cycle = input('Хотите попробовать еще раз? ')
                 match end_cycle:
-                    case 'нет':
-                        break  
+                    case 'да':
+                        continue
+                    case _:
+                        break   
             except:
                 print('Вы уверены что ввели число?') 
         case '3':
             a = randint(1,10)
             b = randint(-100,100)
             z = -b
-            x = z / a # решения уравнения 
+            x = z / a               # решения уравнения 
             if b > 0:
                 k = '+'
             else:
-                k = '' # знаки в уравнении 
+                k = ''              # знаки в уравнении 
             print(f'{a}x{k}{b} = 0')
             prov = float(input('Введите x: '))
             if prov == round(x):
-                print('yes', x)
+                print('Верный ответ!')
             else:
-                print(x)
+                print('Неверный ответ!', x)
             end_cycle = input('Хотите попробовать еще раз? ')
             match end_cycle:
                 case 'нет':
@@ -59,13 +63,11 @@ while True:
         case '4':
             a = randint(-9,9)
             b = randint(-9,9)
-            c = randint(-9,9)
+            c = randint(1,9)
             sign1 = ''
-            sign2 = ''
+            sign2 = '+'
             if b >= 0:
                 sign1 = '+'
-            if c >= 0:
-                sign2 = '+'
             rand = randint(1,2)
             spic = tuple(range(1, 101)) 
             D = (b ** 2) - (4 * a * c)
@@ -74,19 +76,16 @@ while True:
                 x2 = (-b + sqrt(D)) / (2 * a)
                 if sqrt(D) in spic:                #ограничивает дискриминант
                     print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
-                    x1x2 = x1, x2
-                    try:
-                        player_choise1 = int(input('Введите дискриминант квадратного уравнения: '))
-                        if player_choise1 == D:
-                            player_choise2 = input('Верно! Введите x1 и x2 квадратного кравнения: ')
-                            if player_choise2 == str(x1x2):
-                                print('Правильно!') 
-                            else:
-                                print('Неправильно!')
+                    x1x2 = min(x1, x2), max(x1, x2)
+                    player_choise1 = input('Введите дискриминант квадратного уравнения: ')
+                    if player_choise1 == str(D):
+                        player_choise2 = input('Верно! Введите x1 и x2 в порядке возрастания: ')
+                        if player_choise2 == str(x1x2):
+                            print('Правильно!') 
                         else:
-                            print(f'Неверно, дискриминант равен {D}') 
-                    except:
-                        print('Вы уверены что ввели число?') 
+                            print('Неправильно!')
+                    else:
+                        print(f'Неверно, дискриминант равен {D}')  
             elif D == 0:
                 x = -b / (2 * a)
                 print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
@@ -101,7 +100,7 @@ while True:
                     else:
                         print(f'Неверно, дискриминант равен {D}')
                 except:
-                    print('Вы уверены что ввели число?')
+                    print('Вы уверены что ввели число?') 
             elif D < 0:
                 x = 'Корней нет'
                 print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
@@ -117,7 +116,9 @@ while True:
                 print('error') #подстраховка
             end_cycle = input('Хотите попробовать еще раз? ')
             match end_cycle:
-                case 'нет':
+                case 'да':
+                    continue
+                case _:
                     break 
         case _:
             print('Выберете один из существующих уровней сложности!')
