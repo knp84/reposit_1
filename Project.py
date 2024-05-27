@@ -77,14 +77,14 @@ while True:
                 x2 = (-b + sqrt(D)) / (2 * a)
                 if sqrt(D) in spic:                #ограничивает дискриминант
                     print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
-                    x1x2 = min(x1, x2), max(x1, x2)
+                    x1x2 = f'{min(x1, x2)}, {max(x1, x2)}'
                     player_choise1 = input('Введите дискриминант квадратного уравнения: ')
                     if player_choise1 == str(D):
-                        player_choise2 = input('Верно! Введите x1 и x2 в порядке возрастания: ')
-                        if player_choise2 == str(x1x2):
-                            print('Правильно!') 
+                        player_choise2 = input('Верно! Введите x1 и x2 в порядке возрастания через запятую: ')
+                        if player_choise2 == x1x2:
+                            print('Правильно!', x1x2) 
                         else:
-                            print('Неправильно!')
+                            print('Неправильно!', x1x2)
                     else:
                         print(f'Неверно, дискриминант равен {D}')  
             elif D == 0:
