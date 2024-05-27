@@ -76,35 +76,44 @@ while True:
                 if sqrt(D) in spic:                #ограничивает дискриминант
                     print(urav)
                     x1x2 = x1, x2
-                    player_choise1 = input('Введите дискриминант квадратного уравнения: ')
-                    if player_choise1 == str(D):
-                        player_choise2 = input('Верно! Введите x1 и x2 квадратного кравнения: ')
-                        if player_choise2 == str(x1x2):
-                            print('Правильно!') 
+                    try:
+                        player_choise1 = int(input('Введите дискриминант квадратного уравнения: '))
+                        if player_choise1 == D:
+                            player_choise2 = input('Верно! Введите x1 и x2 квадратного кравнения: ')
+                            if player_choise2 == str(x1x2):
+                                print('Правильно!') 
+                            else:
+                                print('Неправильно!')
                         else:
-                            print('Неправильно!')
-                    else:
-                        print(f'Неверно, дискриминант равен {D}')  
+                            print(f'Неверно, дискриминант равен {D}') 
+                    except:
+                        print('Вы уверены что ввели число?') 
             elif D == 0:
                 x = -b / (2 * a)
                 print(urav)
-                player_choise1 = input('Введите дискриминант квадратного уравнения: ')
-                if player_choise1 == str(D):
-                    player_choise2 = input('Введите x1 и x2 квадратного кравнения: ')
-                    if player_choise2 == str(x):
-                        print('Вы правильно решили квадратное уравнение!') 
+                try:
+                    player_choise1 = int(input('Введите дискриминант квадратного уравнения: '))
+                    if player_choise1 == D:
+                        player_choise2 = input('Введите x1 и x2 квадратного кравнения: ')
+                        if player_choise2 == str(x):
+                            print('Вы правильно решили квадратное уравнение!') 
+                        else:
+                            print('Вы неправильно решили квадратное уравнение! Попробуйте сонва!')
                     else:
-                        print('Вы неправильно решили квадратное уравнение! Попробуйте сонва!')
-                else:
-                    print(f'Неверно, дискриминант равен {D}')   
+                        print(f'Неверно, дискриминант равен {D}')
+                except:
+                    print('Вы уверены что ввели число?')
             elif D < 0:
                 x = 'Корней нет'
                 print(urav)
-                player_choise1 = input('Введите дискриминант квадратного уравнения: ')
-                if player_choise1 == str(D):
-                    print('Правильно! Корней нет')
-                else:
-                    print(f'Неверно, дискриминант равен {D}')
+                try:
+                    player_choise1 = int(input('Введите дискриминант квадратного уравнения: '))
+                    if player_choise1 == D:
+                        print('Правильно! Корней нет')
+                    else:
+                        print(f'Неверно, дискриминант равен {D}')
+                except:
+                    print('Вы уверены что ввели число?')
             else:
                 print('error') #подстраховка
             end_cycle = input('Хотите попробовать еще раз? ')
