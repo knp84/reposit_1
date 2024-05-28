@@ -91,8 +91,8 @@ while True:
                 x = -b / (2 * a)
                 print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
                 try:
-                    player_choise1 = int(input('Введите дискриминант квадратного уравнения: '))
-                    if player_choise1 == D:
+                    player_choise = int(input('Введите дискриминант квадратного уравнения: '))
+                    if player_choise == D:
                         player_choise2 = input('Введите x1 и x2 квадратного кравнения: ')
                         if player_choise2 == str(x):
                             print('Вы правильно решили квадратное уравнение!') 
@@ -106,8 +106,8 @@ while True:
                 x = 'Корней нет'
                 print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
                 try:
-                    player_choise1 = int(input('Введите дискриминант квадратного уравнения: '))
-                    if player_choise1 == D:
+                    player_choise = int(input('Введите дискриминант квадратного уравнения: '))
+                    if player_choise == D:
                         print('Правильно! Корней нет')
                     else:
                         print(f'Неверно, дискриминант равен {D}')
