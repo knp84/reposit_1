@@ -13,21 +13,21 @@ while True:
         case '1':    
             a = randint(0,100)
             b = randint(0,100)
-            plus = a + b
+            addition = a + b
             print(f'Введите сумму чисел {a} и {b}: ')
-            if pl_chs2() == plus:
-                print(f'да, {a} + {b} = {plus}')
+            if pl_chs2() == addition:
+                print(f'да, {a} + {b} = {addition}')
             else:
-                print('Неверный ответ!', plus)  
+                print('Неверный ответ!', addition)  
         case '2':                         
             a = randint(0,10)
             b = randint(1,10)
-            mult = a * b
+            multiply = a * b
             print(f'Введите произведение чисел {a} и {b}: ')
-            if pl_chs2() == mult:
-                print(f'да, {a} * {b} = {mult}')
+            if pl_chs2() == multiply:
+                print(f'да, {a} * {b} = {multiply}')
             else:
-                print('Неверный ответ!', mult)      
+                print('Неверный ответ!', multiply)      
         case '3':
             a = randint(1,10)
             b = randint(-100,100)
