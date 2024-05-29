@@ -2,11 +2,10 @@ from math import sqrt
 from random import randint
 def pl_chs():
     try:
-        return int(input())
+        player_solution = int(input())
+        return player_solution                  #вместил все в 1 функцию 
     except:
         return print( 'not a number')
-def pl_chs2():       #не очень красиво конечно, но без нее не выходит
-    return pl_chs()
 while True:
     choise_dif = input('Выберите сложность задачи от 1 до 4: ') 
     match choise_dif: 
@@ -15,7 +14,7 @@ while True:
             b = randint(0,100)
             addition = a + b
             print(f'Введите сумму чисел {a} и {b}: ')
-            if pl_chs2() == addition:
+            if pl_chs() == addition:
                 print(f'да, {a} + {b} = {addition}')
             else:
                 print('Неверный ответ!', addition)  
