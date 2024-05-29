@@ -1,9 +1,9 @@
 from math import sqrt
 from random import randint
-def pl_chs():
+def player_solution():
     try:
-        player_solution = int(input())
-        return player_solution                  #вместил все в 1 функцию 
+        solution = int(input())
+        return solution                  #вместил все в 1 функцию 
     except:
         return print( 'not a number')
 while True:
@@ -14,7 +14,7 @@ while True:
             b = randint(0,100)
             addition = a + b
             print(f'Введите сумму чисел {a} и {b}: ')
-            if pl_chs() == addition:
+            if player_solution() == addition:               #сделал названия переменных немного понятней 
                 print(f'да, {a} + {b} = {addition}')
             else:
                 print('Неверный ответ!', addition)  
@@ -23,7 +23,7 @@ while True:
             b = randint(1,10)
             multiply = a * b
             print(f'Введите произведение чисел {a} и {b}: ')
-            if pl_chs() == multiply:
+            if player_solution() == multiply:
                 print(f'да, {a} * {b} = {multiply}')
             else:
                 print('Неверный ответ!', multiply)      
@@ -74,7 +74,7 @@ while True:
                 x = -b / (2 * a)
                 print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
                 print('Введите дискриминант квадратного уравнения: ')
-                if pl_chs() == D:
+                if player_solution() == D:
                     player_choise2 = input('Введите x1 и x2 квадратного кравнения: ')
                     if player_choise2 == str(x):
                         print('Вы правильно решили квадратное уравнение!') 
