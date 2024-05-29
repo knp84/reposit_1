@@ -19,12 +19,6 @@ while True:
                 print(f'да, {a} + {b} = {plus}')
             else:
                 print('Неверный ответ!', plus)  
-            end_cycle = input('Хотите попробовать еще раз? ')   
-            match end_cycle:
-                case 'да':
-                    continue
-                case _:
-                    break   
         case '2':                         
             a = randint(0,10)
             b = randint(1,10)
@@ -33,13 +27,7 @@ while True:
             if pl_chs2() == mult:
                 print(f'да, {a} * {b} = {mult}')
             else:
-                print('Неверный ответ!', mult)    
-            end_cycle = input('Хотите попробовать еще раз? ')
-            match end_cycle:
-                case 'да':
-                    continue
-                case _:
-                    break       
+                print('Неверный ответ!', mult)      
         case '3':
             a = randint(1,10)
             b = randint(-100,100)
@@ -55,10 +43,6 @@ while True:
                 print('Верный ответ!')
             else:
                 print('Неверный ответ!', x)
-            end_cycle = input('Хотите попробовать еще раз? ')
-            match end_cycle:
-                case 'нет':
-                    break 
         case '4':
             a = randint(1,9)
             b = randint(-9,9)
@@ -112,11 +96,11 @@ while True:
                     print('Вы уверены что ввели число?')
             else:
                 print('error') #подстраховка
-            end_cycle = input('Хотите попробовать еще раз? ')
-            match end_cycle:
-                case 'да':
-                    continue
-                case _:
-                    break 
         case _:
             print('Выберете один из существующих уровней сложности!')
+    end_cycle = input('Хотите попробовать еще раз? ')
+    match end_cycle:
+        case 'да':
+            continue
+        case _:
+            break 
