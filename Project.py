@@ -1,33 +1,32 @@
 from math import sqrt
 from random import randint
-def pl_chs():
+def player_solution():
     try:
-        return int(input())
+        solution = int(input())
+        return solution                  #вместил все в 1 функцию 
     except:
-        return print( 'not a number')
-def pl_chs2():       #не очень красиво конечно, но без нее не выходит
-    return pl_chs()
+        return print( 'Ошибка ввода! Введите число!')
 while True:
     choise_dif = input('Выберите сложность задачи от 1 до 4: ') 
     match choise_dif: 
         case '1':    
             a = randint(0,100)
             b = randint(0,100)
-            plus = a + b
+            addition = a + b
             print(f'Введите сумму чисел {a} и {b}: ')
-            if pl_chs2() == plus:
-                print(f'да, {a} + {b} = {plus}')
+            if player_solution() == addition:               #сделал названия переменных немного понятней 
+                print(f'да, {a} + {b} = {addition}')         #или же следует дать названия expected_result и calculation_result?
             else:
-                print('Неверный ответ!', plus)  
+                print('Неверный ответ!', addition)  
         case '2':                         
             a = randint(0,10)
             b = randint(1,10)
-            mult = a * b
+            multiply = a * b
             print(f'Введите произведение чисел {a} и {b}: ')
-            if pl_chs2() == mult:
-                print(f'да, {a} * {b} = {mult}')
+            if player_solution() == multiply:
+                print(f'да, {a} * {b} = {multiply}')
             else:
-                print('Неверный ответ!', mult)      
+                print('Неверный ответ!', multiply)      
         case '3':
             a = randint(1,10)
             b = randint(-100,100)
@@ -75,7 +74,7 @@ while True:
                 x = -b / (2 * a)
                 print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
                 print('Введите дискриминант квадратного уравнения: ')
-                if pl_chs2() == D:
+                if player_solution() == D:
                     player_choise2 = input('Введите x1 и x2 квадратного кравнения: ')
                     if player_choise2 == str(x):
                         print('Вы правильно решили квадратное уравнение!') 
