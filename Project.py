@@ -5,7 +5,7 @@ def player_solution():
         solution = int(input())
         return solution                  #вместил все в 1 функцию 
     except:
-        return print( 'not a number')
+        return print( 'Ошибка ввода! Введите число!')
 while True:
     choise_dif = input('Выберите сложность задачи от 1 до 4: ') 
     match choise_dif: 
