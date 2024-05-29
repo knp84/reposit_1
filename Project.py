@@ -23,7 +23,7 @@ while True:
             b = randint(1,10)
             multiply = a * b
             print(f'Введите произведение чисел {a} и {b}: ')
-            if pl_chs2() == multiply:
+            if pl_chs() == multiply:
                 print(f'да, {a} * {b} = {multiply}')
             else:
                 print('Неверный ответ!', multiply)      
@@ -74,7 +74,7 @@ while True:
                 x = -b / (2 * a)
                 print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
                 print('Введите дискриминант квадратного уравнения: ')
-                if pl_chs2() == D:
+                if pl_chs() == D:
                     player_choise2 = input('Введите x1 и x2 квадратного кравнения: ')
                     if player_choise2 == str(x):
                         print('Вы правильно решили квадратное уравнение!') 
