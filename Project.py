@@ -15,7 +15,7 @@ while True:
             addition = a + b
             print(f'Введите сумму чисел {a} и {b}: ')
             if player_solution() == addition:               #сделал названия переменных немного понятней 
-                print(f'да, {a} + {b} = {addition}')
+                print(f'да, {a} + {b} = {addition}')         #или же следует дать названия expected_result и calculation_result?
             else:
                 print('Неверный ответ!', addition)  
         case '2':                         
