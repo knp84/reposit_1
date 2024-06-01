@@ -1,17 +1,31 @@
 from math import sqrt
 from random import randint
 def player_solution():
-    try:
-        solution = int(input())
-        return solution                  #вместил все в 1 функцию 
-    except:
-        return print( 'Ошибка ввода! Введите число!')
+    match test: 
+        case 1:
+            try:
+                solution = int(input())                                     #расширил функцию под разные типы
+            except:                                                            #возможно где то есть ошибки, как вернусь все перепроверю
+                return print( 'Ошибка ввода! Введите число!')                #переменные к понедельнику поменяю
+        case 2:
+            try:
+                solution = float(input('округлите x до первого знака после запятой '))
+            except:
+                print('Введите число с плавающей точкой!')
+        case 3:
+            solution = input()
+            try:
+                int(solution)
+            except:
+                print('Введите строковое значение')
+    return solution
 while True:
     choise_dif = input('Выберите сложность задачи от 1 до 4: ') 
     match choise_dif: 
         case '1':    
             a = randint(0,100)
             b = randint(0,100)
+            test = 1
             addition = a + b
             print(f'Введите сумму чисел {a} и {b}: ')
             if player_solution() == addition:               #сделал названия переменных немного понятней 
@@ -22,6 +36,7 @@ while True:
             a = randint(0,10)
             b = randint(1,10)
             multiply = a * b
+            test = 1
             print(f'Введите произведение чисел {a} и {b}: ')
             if player_solution() == multiply:
                 print(f'да, {a} * {b} = {multiply}')
@@ -30,6 +45,7 @@ while True:
         case '3':
             a = randint(1,10)
             b = randint(-100,100)
+            test = 2
             z = -b
             x = z / a               # решения уравнения 
             if b > 0:
@@ -58,6 +74,7 @@ while True:
             if D > 0:
                 x1 = (-b - sqrt(D)) / (2 * a)
                 x2 = (-b + sqrt(D)) / (2 * a)
+                test = 3
                 if sqrt(D) in spic:                #ограничивает дискриминант
                     print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
                     x1x2 = f'{min(x1, x2)}, {max(x1, x2)}'
@@ -74,6 +91,7 @@ while True:
                 x = -b / (2 * a)
                 print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
                 print('Введите дискриминант квадратного уравнения: ')
+                test = 1
                 if player_solution() == D:
                     player_choise2 = input('Введите x1 и x2 квадратного кравнения: ')
                     if player_choise2 == str(x):
@@ -86,7 +104,7 @@ while True:
                 x = 'Корней нет'
                 print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
                 try:
-                    player_choise1 = int(input('Введите дискриминант квадратного уравнения: '))
+                    player_choise1 = int(input('Введите дискриминант квадратного уравнения: '))    #тоже к понедельнику поменяю
                     if player_choise1 == D:
                         print('Правильно! Корней нет')
                     else:
