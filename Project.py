@@ -1,12 +1,12 @@
 from math import sqrt
 from random import randint
 def player_solution():
-    match test: 
+    match determine:                                 #определяет какой тип нужно проверять
         case 1:
             try:
-                solution = int(input())                                     #расширил функцию под разные типы
-            except:                                                            #возможно где то есть ошибки, как вернусь все перепроверю
-                return print('Ошибка ввода! Введите число!')                #переменные к понедельнику поменяю
+                solution = int(input())                                    
+            except:                                                            
+                return print('Ошибка ввода! Введите число!')                
         case 2:
             try:
                 solution = float(input('округлите x до первого знака после запятой '))
@@ -22,10 +22,10 @@ def player_solution():
 while True:
     choise_dif = input('Выберите сложность задачи от 1 до 4: ') 
     match choise_dif: 
-        case '1':    
+        case '1':                                   
             a = randint(0,100)
             b = randint(0,100)
-            test = 1
+            determine = 1
             addition = a + b
             print(f'Введите сумму чисел {a} и {b}: ')
             if player_solution() == addition:               #сделал названия переменных немного понятней 
@@ -36,7 +36,7 @@ while True:
             a = randint(0,10)
             b = randint(1,10)
             multiply = a * b
-            test = 1
+            determine = 1
             print(f'Введите произведение чисел {a} и {b}: ')
             if player_solution() == multiply:
                 print(f'да, {a} * {b} = {multiply}')
@@ -45,7 +45,7 @@ while True:
         case '3':
             a = randint(1,10)
             b = randint(-100,100)
-            test = 2
+            determine = 2
             z = -b
             x = z / a               # решения уравнения 
             if b > 0:
@@ -120,4 +120,4 @@ while True:
         case 'да':
             continue
         case _:
-            break 
+            break
