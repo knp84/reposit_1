@@ -120,4 +120,4 @@ while True:
         case 'да':
             continue
         case _:
-            break 
+            break
