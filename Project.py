@@ -69,13 +69,13 @@ while True:
             if c >= 0:
                 sign2 = '+'    
             rand = randint(1,2)
-            spic = tuple(range(1, 101)) 
+            list = tuple(range(1, 101)) 
             D = (b ** 2) - (4 * a * c)
             if D > 0:
                 x1 = (-b - sqrt(D)) / (2 * a)
                 x2 = (-b + sqrt(D)) / (2 * a)
-                test = 3
-                if sqrt(D) in spic:                #ограничивает дискриминант
+                determine = 3
+                if sqrt(D) in list:                #ограничивает дискриминант
                     print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
                     x1x2 = f'{min(x1, x2)}, {max(x1, x2)}'
                     player_choise1 = input('Введите дискриминант квадратного уравнения: ')
@@ -91,7 +91,7 @@ while True:
                 x = -b / (2 * a)
                 print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
                 print('Введите дискриминант квадратного уравнения: ')
-                test = 1
+                determine = 1
                 if player_solution() == D:
                     player_choise2 = input('Введите x1 и x2 квадратного кравнения: ')
                     if player_choise2 == str(x):
@@ -102,15 +102,12 @@ while True:
                     print(f'Неверно, дискриминант равен {D}') 
             elif D < 0:
                 x = 'Корней нет'
-                print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
-                try:
-                    player_choise1 = int(input('Введите дискриминант квадратного уравнения: '))    #тоже к понедельнику поменяю
-                    if player_choise1 == D:
-                        print('Правильно! Корней нет')
-                    else:
-                        print(f'Неверно, дискриминант равен {D}')
-                except:
-                    print('Вы уверены что ввели число?')
+                determine = 1
+                print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0', 'Введите дискриминант уравнения: ', sep='\n')
+                if player_solution() == D:
+                    print('Правильно! Корней нет')
+                else:
+                    print(f'Неверно, дискриминант равен {D}')
             else:
                 print('error') #подстраховка
         case _:
