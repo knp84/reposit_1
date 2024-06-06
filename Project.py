@@ -68,7 +68,6 @@ while True:
                 sign1 = '+'
             if c >= 0:
                 sign2 = '+'    
-            rand = randint(1,2)
             list = tuple(range(1, 101)) 
             D = (b ** 2) - (4 * a * c)
             if D > 0:
