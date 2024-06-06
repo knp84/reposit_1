@@ -6,7 +6,7 @@ c = randint(-9,9)
 spic = tuple(range(1, 101)) 
 D = (b ** 2) - (4 * a * c)
 def player_solution():
-    match determine:                                 #определяет какой тип нужно проверять
+    match determine:                                 
         case 1:
             try:
                 solution = int(input())                                    
@@ -24,9 +24,9 @@ def player_solution():
             except:
                 print('Введите строковое значение')
     return solution
-if D > 0:  
+if D > 0:                               #не знаю как убрать эти проверки многочисленные, глаз режут
     if sqrt(D) not in spic:
-        while sqrt(D) not in spic:
+        while sqrt(D) not in spic:              #пытаюсь переделать case 4
             j = randint(-1,1)
             a += j 
             b += j 
@@ -43,7 +43,13 @@ if D > 0:
                 break 
     if sqrt(D) in spic:
         determine = 1
-        print('pon')    
+        print('pon')
+        sign1 = ''
+        sign2 = ''
+        if b >= 0:
+            sign1 = '+'
+        if c >= 0:
+            sign2 = '+'    
 elif D < 0:
     print('корней нет')
 else:
