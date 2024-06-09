@@ -5,6 +5,8 @@ b = randint(-9,9)
 c = randint(-9,9)
 spic = tuple(range(1, 101)) 
 D = (b ** 2) - (4 * a * c)
+def square_equation():
+    print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
 def player_solution():
     match determine:                                 
         case 1:
@@ -43,14 +45,32 @@ if D > 0:                               #не знаю как убрать эт�
                 break 
     if sqrt(D) in spic:
         determine = 1
-        print('pon')
+        x1 = (-b - sqrt(D)) / (2 * a)
+        x2 = (-b + sqrt(D)) / (2 * a)
         sign1 = ''
         sign2 = ''
         if b >= 0:
             sign1 = '+'
         if c >= 0:
             sign2 = '+'    
+        determine = 1
+        square_equation()
+        player_D = int(input('Ваедите D кв. ур.'))
+        if player_D == D:     
+            equation_root_1 = float(input('Введите x1'))
+            equation_root_2 = float(input('Введите x2'))
+            if equation_root_1 == round(x1, 1):
+                if equation_root_2 == round(x1, 1):
+                    print('Верно!')
+                else:
+                    print('Неверно!')
+        else:
+            print('Неверно!')
+
+
+        
 elif D < 0:
+    
     print('корней нет')
 else:
     print('корень 1')
