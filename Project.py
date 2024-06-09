@@ -1,4 +1,4 @@
-from math import sqrt
+from math import sqrt                       #пытаюсь переделать case 4
 from random import randint
 a = randint(1,9)
 b = randint(-9,9)
@@ -26,8 +26,8 @@ def player_solution():
     return solution
 if D > 0:                               #не знаю как убрать эти проверки многочисленные, глаз режут
     if sqrt(D) not in spic:
-        while sqrt(D) not in spic:              #пытаюсь переделать case 4
-            j = randint(-1,1)
+        while sqrt(D) not in spic:              
+            j = randint(-1,1)               #изменяю a b c для удовлетворительного значения D
             a += j 
             b += j 
             c += j 
