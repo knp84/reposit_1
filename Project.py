@@ -7,6 +7,7 @@ spic = tuple(range(1, 101))
 D = (b ** 2) - (4 * a * c)
 def square_equation():
     print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
+square_equation()
 def player_solution():
     match determine:                                 
         case 1:
@@ -55,22 +56,18 @@ if D > 0:                               #не знаю как убрать эт�
             sign2 = '+'    
         determine = 1
         square_equation()
-        player_D = int(input('Ваедите D кв. ур.'))
-        if player_D == D:     
-            equation_root_1 = float(input('Введите x1'))
-            equation_root_2 = float(input('Введите x2'))
+        if player_solution() == D:     
+            print(x1, x2, round(x1, 1), round(x2, 1))
+            equation_root_1 = float(input('Введите x1 '))
+            equation_root_2 = float(input('Введите x2 '))
             if equation_root_1 == round(x1, 1):
-                if equation_root_2 == round(x1, 1):
+                if equation_root_2 == round(x2, 1):
                     print('Верно!')
                 else:
                     print('Неверно!')
         else:
             print('Неверно!')
-
-
-        
 elif D < 0:
-    
     print('корней нет')
 else:
     print('корень 1')
