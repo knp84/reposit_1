@@ -20,11 +20,19 @@ def player_solution():
             except:
                 print('Введите число с плавающей точкой!')
         case 3:
-            solution = input()
             try:
-                int(solution)
+                solution_1 = float(input())
+                solution_2 = float(input())
             except:
-                print('Введите строковое значение')
+                print('err')
+            if solution_1 == int(solution_1):
+                return int(solution_1)
+            else:
+                return solution_1
+            if solution_2 == int(solution_2):
+                return int(solution_2)
+            else:
+                return solution_2            
     return solution
 if D > 0:                               
     if sqrt(D) not in spic:
