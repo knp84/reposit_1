@@ -11,29 +11,36 @@ def player_solution():
     match determine:                                 
         case 1:
             try:
-                solution = int(input())                                    
+                solution = int(input())     
+                return solution                               
             except:                                                            
                 return print('Ошибка ввода! Введите число!')                
         case 2:
             try:
                 solution = float(input('округлите x до первого знака после запятой '))
+                return solution
             except:
                 print('Введите число с плавающей точкой!')
-        case 3:
+        case 3:                                #решил попробовать убрать не нужные точки (1.0, 5.0) и расширить функцию. Работает так себе
+            player_x_1 = input()
             try:
-                solution_1 = float(input())
-                solution_2 = float(input())
+                player_x_1 = float(player_x_1)
+                if player_x_1 == int(player_x_1):
+                    return int(player_x_1)
+                else:
+                    return round(player_x_1, 1)
             except:
-                print('err')
-            if solution_1 == int(solution_1):
-                return int(solution_1)
-            else:
-                return solution_1
-            if solution_2 == int(solution_2):
-                return int(solution_2)
-            else:
-                return solution_2            
-    return solution
+                print('err')    
+        case 4:
+            try:
+                player_x_2 = float(input())
+                if player_x_2 == int(player_x_2):
+                    return int(player_x_2)
+                else:
+                    return round(player_x_2, 1)   
+            except:
+                print('err')         
+    
 if D > 0:                               
     if sqrt(D) not in spic:
         while sqrt(D) not in spic:              
@@ -52,7 +59,6 @@ if D > 0:
             else:
                 break 
     if sqrt(D) in spic:
-        determine = 1
         x1 = (-b - sqrt(D)) / (2 * a)
         x2 = (-b + sqrt(D)) / (2 * a)
         sign1 = ''
@@ -65,10 +71,10 @@ if D > 0:
         square_equation()
         if player_solution() == D:     
             print(x1, x2, round(x1, 1), round(x2, 1))
-            equation_root_1 = float(input('Введите x1 '))
-            equation_root_2 = float(input('Введите x2 '))
-            if equation_root_1 == round(x1, 1):
-                if equation_root_2 == round(x2, 1):
+            determine = 3
+            if player_solution() == round(x1, 1) or player_solution() == int(x1):
+                determine = 4
+                if player_solution() == round(x2, 1) or player_solution() == int(x2):
                     print('Верно!')
                 else:
                     print('Неверно!')
