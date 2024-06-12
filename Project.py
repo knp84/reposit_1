@@ -21,7 +21,7 @@ def player_solution():
                 return solution
             except:
                 print('Введите число с плавающей точкой!')
-        case 3:                                #решил попробовать убрать не нужные точки (1.0, 5.0) и расширить функцию. Работает так себе
+        case 3:                                #решил  убрать не нужные точки (1.0, 5.0) и расширить функцию. Работает так себе
             player_x_1 = input()
             try:
                 player_x_1 = float(player_x_1)
@@ -32,14 +32,15 @@ def player_solution():
             except:
                 print('err')    
         case 4:
+            player_x_2 = input()
             try:
-                player_x_2 = float(input())
+                player_x_2 = float(player_x_2)
                 if player_x_2 == int(player_x_2):
                     return int(player_x_2)
                 else:
-                    return round(player_x_2, 1)   
+                    return round(player_x_2, 1)
             except:
-                print('err')         
+                print('err')      
     
 if D > 0:                               
     if sqrt(D) not in spic:
@@ -78,7 +79,7 @@ if D > 0:
                     print('Верно!')
                 else:
                     print('Неверно!')
-        else:
+        else:               # По какой-то причине при неправильном ответе надпись «неправильно» не появляется.
             print('Неверно!')
 elif D < 0:
     print('корней нет')
