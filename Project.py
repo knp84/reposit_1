@@ -40,50 +40,51 @@ def player_solution():
                 else:
                     return round(player_x_2, 1)
             except:
-                print('err')      
-    
+                print('err')       
 if D > 0:                               
     if sqrt(D) not in spic:
-        while sqrt(D) not in spic:              
+        while True:              
             j = randint(-1,1)               #изменяю a b c для удовлетворительного значения D
             a += j 
             b += j 
             c += j 
             D = (b ** 2) - (4 * a * c)
             if D > 0:
-                if sqrt(D) in spic:
+                if sqrt(D) in spic and a > 0:
                     print(a, b, c, D)
                     break
                 else:
                     pass
                     print(a, b, c)
             else:
-                break 
-    if sqrt(D) in spic:
-        x1 = (-b - sqrt(D)) / (2 * a)
-        x2 = (-b + sqrt(D)) / (2 * a)
-        sign1 = ''
-        sign2 = ''
-        if b >= 0:
-            sign1 = '+'
-        if c >= 0:
-            sign2 = '+'    
-        determine = 1
-        square_equation()
-        if player_solution() == D:     
-            print(x1, x2, round(x1, 1), round(x2, 1))
-            determine = 3
-            if player_solution() == round(x1, 1) or player_solution() == int(x1):
-                determine = 4
-                if player_solution() == round(x2, 1) or player_solution() == int(x2):
-                    print('Верно!')
+                print('pon')
+                break    
+    if D > 0:
+        if sqrt(D) in spic:
+            x1 = (-b - sqrt(D)) / (2 * a)
+            x2 = (-b + sqrt(D)) / (2 * a)
+            sign1 = ''
+            sign2 = ''
+            if b >= 0:
+                sign1 = '+'
+            if c >= 0:
+                sign2 = '+'    
+            determine = 1
+            square_equation()
+            if player_solution() == D:     
+                print(x1, x2, round(x1, 1), round(x2, 1))
+                determine = 3
+                if player_solution() == round(x1, 1) or player_solution() == int(x1):
+                    determine = 4
+                    if player_solution() == round(x2, 1) or player_solution() == int(x2):
+                        print('Верно!')
+                    else:
+                        print('Неверно!')
                 else:
-                    print('Неверно!')
-            else:
-                print('Неверно!')        
-        else:               
-            print('Неверно!')
-elif D < 0:
+                    print('Неверно!')        
+            else:               
+                print('Неверно!')
+if D < 0:
     print('корней нет')
-else:
+if D == 0:
     print('корень 1')
