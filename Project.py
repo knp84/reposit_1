@@ -7,7 +7,6 @@ spic = tuple(range(1, 101))
 D = (b ** 2) - (4 * a * c)
 def square_equation():
     print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
-square_equation()
 def player_solution():
     match determine:                                 
         case 1:
@@ -27,7 +26,7 @@ def player_solution():
             except:
                 print('Введите строковое значение')
     return solution
-if D > 0:                               #не знаю как убрать эти проверки многочисленные, глаз режут
+if D > 0:                               
     if sqrt(D) not in spic:
         while sqrt(D) not in spic:              
             j = randint(-1,1)               #изменяю a b c для удовлетворительного значения D
