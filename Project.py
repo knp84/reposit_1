@@ -6,7 +6,7 @@ c = randint(-9,9)
 spic = tuple(range(1, 101)) 
 D = (b ** 2) - (4 * a * c)
 def square_equation():
-    print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
+    print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0', D)
 def player_solution():
     match determine:                                 
         case 1:
@@ -22,25 +22,15 @@ def player_solution():
             except:
                 print('Введите число с плавающей точкой!')
         case 3:                                #решил  убрать не нужные точки (1.0, 5.0) и расширить функцию. Работает так себе
-            player_x_1 = input()
+            player_x = input()
             try:
-                player_x_1 = float(player_x_1)
-                if player_x_1 == int(player_x_1):
-                    return int(player_x_1)
+                player_x = float(player_x)
+                if player_x == int(player_x):
+                    return int(player_x)
                 else:
-                    return round(player_x_1, 1)
+                    return round(player_x, 1)
             except:
-                print('err')    
-        case 4:
-            player_x_2 = input()
-            try:
-                player_x_2 = float(player_x_2)
-                if player_x_2 == int(player_x_2):
-                    return int(player_x_2)
-                else:
-                    return round(player_x_2, 1)
-            except:
-                print('err')       
+                print('err')         
 if D > 0:                               
     if sqrt(D) not in spic:
         while True:              
@@ -75,7 +65,6 @@ if D > 0:
                 print(x1, x2, round(x1, 1), round(x2, 1))
                 determine = 3
                 if player_solution() == round(x1, 1) or player_solution() == int(x1):
-                    determine = 4
                     if player_solution() == round(x2, 1) or player_solution() == int(x2):
                         print('Верно!')
                     else:
