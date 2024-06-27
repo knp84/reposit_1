@@ -32,7 +32,8 @@ def player_solution():
                 else:
                     return round(player_x, 1)
             except:
-                print('err')         
+                print('err') 
+                return player_x        
 if D > 0:                               
     if sqrt(D) not in spic:
         while True:              
@@ -65,7 +66,9 @@ if D > 0:
                 print(x1, x2, round(x1, 1), round(x2, 1))
                 determine = 3
                 if player_solution() == round(x1, 1) or player_solution() == int(x1):
-                    if player_solution() == round(x2, 1) or player_solution() == int(x2): #странно работает если допустить ошибку в x2
+                    if player_solution() == round(x2, 1):
+                        print('Верно!')
+                    if player_solution() == int(x2): #странно работает если допустить ошибку в x2
                         print('Верно!')
                     else:
                         print('Неверно!')
