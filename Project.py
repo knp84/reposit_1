@@ -23,17 +23,7 @@ def player_solution():
                 return solution
             except:
                 print('Введите число с плавающей точкой!')
-        case 3:                                #решил  убрать не нужные точки (1.0, 5.0) и расширить функцию. Работает так себе
-            player_x = input()
-            try:
-                player_x = float(player_x)
-                if player_x == int(player_x):
-                    return int(player_x)
-                else:
-                    return round(player_x, 1)
-            except:
-                print('err') 
-                return player_x        
+        
 if D > 0:                               
     if sqrt(D) not in spic:
         while True:              
@@ -66,12 +56,7 @@ if D > 0:
                 print(x1, x2, round(x1, 1), round(x2, 1))
                 determine = 3
                 if player_solution() == round(x1, 1) or player_solution() == int(x1):
-                    if player_solution() == round(x2, 1):
-                        print('Верно!')
-                    if player_solution() == int(x2): #странно работает если допустить ошибку в x2
-                        print('Верно!')
-                    else:
-                        print('Неверно!')
+                    print('Верно!')
                 else:
                     print('Неверно!')        
             else:               
