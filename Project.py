@@ -6,6 +6,8 @@ c = randint(-9,9)
 spic = tuple(range(1, 101)) 
 D = (b ** 2) - (4 * a * c)
 def square_equation():
+    sign1 = ''
+    sign2 = ''
     print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0', D)
 def player_solution():
     match determine:                                 
@@ -53,19 +55,17 @@ if D > 0:
         if sqrt(D) in spic:
             x1 = (-b - sqrt(D)) / (2 * a)
             x2 = (-b + sqrt(D)) / (2 * a)
-            sign1 = ''
-            sign2 = ''
+            determine = 1
             if b >= 0:
                 sign1 = '+'
             if c >= 0:
                 sign2 = '+'    
-            determine = 1
             square_equation()
             if player_solution() == D:     
                 print(x1, x2, round(x1, 1), round(x2, 1))
                 determine = 3
                 if player_solution() == round(x1, 1) or player_solution() == int(x1):
-                    if player_solution() == round(x2, 1) or player_solution() == int(x2):
+                    if player_solution() == round(x2, 1) or player_solution() == int(x2): #странно работает если допустить ошибку в x2
                         print('Верно!')
                     else:
                         print('Неверно!')
@@ -74,6 +74,22 @@ if D > 0:
             else:               
                 print('Неверно!')
 if D < 0:
-    print('корней нет')
+    square_equation()
+    determine = 1
+    if D == player_solution():
+        print('правильно, корней нет')
+    else:
+        print('Неверно!')
 if D == 0:
-    print('корень 1')
+    square_equation()
+    determine = 1
+    if D == player_solution():
+        determine = 3
+        print('Введите корень:')
+        match x1:
+                case player_solution():
+                    print('Верно!')
+                case _:
+                    print('Неверно!')
+    else:
+        print('Неверно')
