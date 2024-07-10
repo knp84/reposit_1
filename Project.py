@@ -10,7 +10,6 @@ def square_equation():
         sign2 = '+' 
     print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
 def player_solution():
-    determine = 0
     match determine:                                 
         case 1:
             try:
@@ -34,7 +33,6 @@ def player_solution():
                     return round(player_x, 1)
             except:
                 print('err')
-    
 while True:
     choise_dif = input('Выберите сложность задачи от 1 до 4: ') 
     match choise_dif: 
@@ -96,6 +94,12 @@ while True:
                             break    
                 if D > 0:
                     if sqrt(D) in spic:
+                        sign1 = ''
+                        sign2 = ''
+                        if b >= 0:
+                            sign1 = '+'
+                        if c >= 0:
+                            sign2 = '+' 
                         x1 = (-b - sqrt(D)) / (2 * a)
                         x2 = (-b + sqrt(D)) / (2 * a)
                         determine = 1
