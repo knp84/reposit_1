@@ -1,24 +1,40 @@
 from math import sqrt
 from random import randint
+def square_equation():
+    a,b,c=a,b,c
+    sign1 = ''
+    sign2 = ''
+    if b >= 0:
+        sign1 = '+'
+    if c >= 0:
+        sign2 = '+' 
+    print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
 def player_solution():
-    match determine:                                 #определяет какой тип нужно проверять
+    determine = 0
+    match determine:                                 
         case 1:
             try:
-                solution = int(input())                                    
+                solution = int(input())     
+                return solution                               
             except:                                                            
                 return print('Ошибка ввода! Введите число!')                
         case 2:
             try:
                 solution = float(input('округлите x до первого знака после запятой '))
+                return solution
             except:
                 print('Введите число с плавающей точкой!')
-        case 3:
-            solution = input()
+        case 3:                                #решил  убрать не нужные точки (1.0, 5.0) и расширить функцию. Работает так себе
+            player_x = input()
             try:
-                int(solution)
+                player_x = float(player_x)
+                if player_x == int(player_x):
+                    return int(player_x)
+                else:
+                    return round(player_x, 1)
             except:
-                print('Введите строковое значение')
-    return solution
+                print('err')
+    
 while True:
     choise_dif = input('Выберите сложность задачи от 1 до 4: ') 
     match choise_dif: 
@@ -52,9 +68,8 @@ while True:
                 k = '+'
             else:
                 k = ''              # знаки в уравнении 
-            print(f'{a}x{k}{b} = 0')
-            prov = float(input('Введите x: '))
-            if prov == round(x):
+            print(f'{a}x{k}{b} = 0', 'Введите х: ', sep='\n')
+            if player_solution() == round(x):
                 print('Верный ответ!')
             else:
                 print('Неверный ответ!', x)
@@ -63,39 +78,7 @@ while True:
             b = randint(-9,9)
             c = randint(-9,9)
             spic = tuple(range(1, 101)) 
-            D = (b ** 2) - (4 * a * c)
-            def square_equation():
-                sign1 = ''
-                sign2 = ''
-                if b >= 0:
-                    sign1 = '+'
-                if c >= 0:
-                    sign2 = '+' 
-                print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0', D)
-            def player_solution():
-                match determine:                                 
-                    case 1:
-                        try:
-                            solution = int(input())     
-                            return solution                               
-                        except:                                                            
-                            return print('Ошибка ввода! Введите число!')                
-                    case 2:
-                        try:
-                            solution = float(input('округлите x до первого знака после запятой '))
-                            return solution
-                        except:
-                            print('Введите число с плавающей точкой!')
-                    case 3:                                #решил  убрать не нужные точки (1.0, 5.0) и расширить функцию. Работает так себе
-                        player_x = input()
-                        try:
-                            player_x = float(player_x)
-                            if player_x == int(player_x):
-                                return int(player_x)
-                            else:
-                                return round(player_x, 1)
-                        except:
-                            print('err')         
+            D = (b ** 2) - (4 * a * c)         
             if D > 0:                               
                 if sqrt(D) not in spic:
                     while True:              
