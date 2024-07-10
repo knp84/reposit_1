@@ -1,7 +1,7 @@
 from math import sqrt
 from random import randint
 def square_equation():
-    a,b,c=a,b,c
+    a,b,c= randint(1,9),randint(-9,9),randint(-9,9)
     sign1 = ''
     sign2 = ''
     if b >= 0:
