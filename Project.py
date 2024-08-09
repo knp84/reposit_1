@@ -115,26 +115,26 @@ while True:
                                 print('Неверно!')        
                         else:               
                             print('Неверно!')
-                if D < 0:
-                    square_equation()
-                    determine = 1
-                    if D == player_solution():
-                        print('правильно, корней нет')
-                    else:
-                        print('Неверно!')
-                if D == 0:
-                    square_equation()
-                    determine = 1
-                    if D == player_solution():
-                        determine = 3
-                        print('Введите корень:')
-                        match x1:
-                                case player_solution():
-                                    print('Верно!')
-                                case _:
-                                    print('Неверно!')
-                    else:
-                        print('Неверно')
+            if D < 0:
+                square_equation()
+                determine = 1
+                if D == player_solution():
+                    print('правильно, корней нет')
+                else:
+                    print('Неверно!')
+            if D == 0:
+                square_equation()
+                determine = 1
+                if D == player_solution():
+                    determine = 3
+                    print('Введите корень:')
+                    match x1:
+                            case player_solution():
+                                print('Верно!')
+                            case _:
+                                print('Неверно!')
+                else:
+                    print('Неверно')
         case _:
             print('Выберете один из существующих уровней сложности!')
     end_cycle = input('Хотите попробовать еще раз? ')
