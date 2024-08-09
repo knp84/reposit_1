@@ -102,7 +102,7 @@ while True:
                             sign2 = '+'    
                         square_equation()
                         if player_solution() == D:     
-                            print(x1, x2, round(x1, 1), round(x2, 1))
+                            print('Верно, теперь введите корни')
                             determine = 3
                             link = input()
                             if player_solution() == int(x1) or player_solution() == round(x1, 1):
