@@ -1,14 +1,9 @@
 from math import sqrt
 from random import randint
 def square_equation():
-    a,b,c= randint(1,9),randint(-9,9),randint(-9,9)
     sign1 = ''
     sign2 = ''
-    if b >= 0:
-        sign1 = '+'
-    if c >= 0:
-        sign2 = '+' 
-    print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
+    print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0', D)
 def player_solution():
     match determine:                                 
         case 1:
@@ -23,8 +18,8 @@ def player_solution():
                 return solution
             except:
                 print('Введите число с плавающей точкой!')
-        case 3:                                #решил  убрать не нужные точки (1.0, 5.0) и расширить функцию. Работает так себе
-            player_x = input()
+        case 3:                              
+            player_x = player_xz
             try:
                 player_x = float(player_x)
                 if player_x == int(player_x):
@@ -32,7 +27,8 @@ def player_solution():
                 else:
                     return round(player_x, 1)
             except:
-                print('err')
+                print('err') 
+                return player_x 
 while True:
     choise_dif = input('Выберите сложность задачи от 1 до 4: ') 
     match choise_dif: 
