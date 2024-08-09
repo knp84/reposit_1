@@ -1,4 +1,4 @@
-from math import sqrt                       #пытаюсь переделать case 4
+from math import sqrt                      
 from random import randint
 a = randint(1,9)
 b = randint(-9,9)
@@ -23,7 +23,7 @@ def player_solution():
                 return solution
             except:
                 print('Введите число с плавающей точкой!')
-        case 3:                                #решил  убрать не нужные точки (1.0, 5.0) и расширить функцию. Работает так себе
+        case 3:                              
             player_x = player_xz
             try:
                 player_x = float(player_x)
