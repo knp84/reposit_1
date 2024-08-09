@@ -85,53 +85,56 @@ while True:
                             if sqrt(D) in spic and a > 0:
                                 print(a, b, c, D)
                                 break
+                            else:
+                                pass
+                                print(a, b, c)
                         else:
                             print('pon')
                             break    
                 if D > 0:
                     if sqrt(D) in spic:
-                        sign1 = ''
-                        sign2 = ''
-                        if b >= 0:
-                            sign1 = '+'
-                        if c >= 0:
-                            sign2 = '+' 
                         x1 = (-b - sqrt(D)) / (2 * a)
                         x2 = (-b + sqrt(D)) / (2 * a)
                         determine = 1
+                        if b >= 0:
+                            sign1 = '+'
+                        if c >= 0:
+                            sign2 = '+'    
                         square_equation()
                         if player_solution() == D:     
                             print(x1, x2, round(x1, 1), round(x2, 1))
                             determine = 3
-                            if player_solution() == round(x1, 1) or player_solution() == int(x1):
-                                if player_solution() == round(x2, 1) or player_solution() == int(x2): #странно работает если допустить ошибку в x2
+                            player_xz = input()
+                            if player_solution() == int(x1) or player_solution() == round(x1, 1):
+                                player_xz = input()
+                                if player_solution() == int(x2) or player_solution() == round(x2, 1):
                                     print('Верно!')
-                                else:
+                                else: 
                                     print('Неверно!')
                             else:
                                 print('Неверно!')        
                         else:               
                             print('Неверно!')
-            if D < 0:
-                square_equation()
-                determine = 1
-                if D == player_solution():
-                    print('правильно, корней нет')
-                else:
-                    print('Неверно!')
-            if D == 0:
-                square_equation()
-                determine = 1
-                x = (-b - sqrt(D)) / (2 * a)
-                if D == player_solution():
-                    determine = 3
-                    print('Введите корень:')
-                    if x == player_solution():
-                        print('Верно!')
+                if D < 0:
+                    square_equation()
+                    determine = 1
+                    if D == player_solution():
+                        print('правильно, корней нет')
                     else:
                         print('Неверно!')
-                else:
-                    print('Неверно')
+                if D == 0:
+                    square_equation()
+                    determine = 1
+                    if D == player_solution():
+                        determine = 3
+                        print('Введите корень:')
+                        match x1:
+                                case player_solution():
+                                    print('Верно!')
+                                case _:
+                                    print('Неверно!')
+                    else:
+                        print('Неверно')
         case _:
             print('Выберете один из существующих уровней сложности!')
     end_cycle = input('Хотите попробовать еще раз? ')
