@@ -19,7 +19,7 @@ def player_solution():
             except:
                 print('Введите число с плавающей точкой!')
         case 3:                              
-            player_x = player_xz
+            player_x = link
             try:
                 player_x = float(player_x)
                 if player_x == int(player_x):
@@ -59,10 +59,10 @@ while True:
             z = -b
             x = z / a               # решения уравнения 
             if b > 0:
-                k = '+'
+                sing = '+'
             else:
-                k = ''              # знаки в уравнении 
-            print(f'{a}x{k}{b} = 0', 'Введите х: ', sep='\n')
+                sing = ''              # знаки в уравнении 
+            print(f'{a}x{sing}{b} = 0', 'Введите х: ', sep='\n')
             if player_solution() == round(x):
                 print('Верный ответ!')
             else:
@@ -83,13 +83,13 @@ while True:
                         D = (b ** 2) - (4 * a * c)
                         if D > 0:
                             if sqrt(D) in spic and a > 0:
-                                print(a, b, c, D)
+                                
                                 break
                             else:
                                 pass
-                                print(a, b, c)
+                                
                         else:
-                            print('pon')
+                            
                             break    
                 if D > 0:
                     if sqrt(D) in spic:
@@ -104,9 +104,9 @@ while True:
                         if player_solution() == D:     
                             print(x1, x2, round(x1, 1), round(x2, 1))
                             determine = 3
-                            player_xz = input()
+                            link = input()
                             if player_solution() == int(x1) or player_solution() == round(x1, 1):
-                                player_xz = input()
+                                link = input()
                                 if player_solution() == int(x2) or player_solution() == round(x2, 1):
                                     print('Верно!')
                                 else: 
