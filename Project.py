@@ -3,7 +3,7 @@ from random import randint
 def square_equation():
     sign1 = ''
     sign2 = ''
-    print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0', D)
+    print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
 def player_solution():
     match determine:                                 
         case 1:
@@ -14,7 +14,7 @@ def player_solution():
                 return print('Ошибка ввода! Введите число!')                
         case 2:
             try:
-                solution = float(input('округлите x до первого знака после запятой '))
+                solution = float(input('Введите х:'))
                 return solution
             except:
                 print('Введите число с плавающей точкой!')
@@ -62,11 +62,11 @@ while True:
                 sing = '+'
             else:
                 sing = ''              # знаки в уравнении 
-            print(f'{a}x{sing}{b} = 0', 'Введите х: ', sep='\n')
-            if player_solution() == round(x):
+            print(f'{a}x{sing}{b} = 0', 'округлите x до первого знака после запятой', sep='\n')
+            if player_solution() == round(x, 1):
                 print('Верный ответ!')
             else:
-                print('Неверный ответ!', x)
+                print('Неверный ответ!', round(x, 1))
         case '4':    
             a = randint(1,9)
             b = randint(-9,9)
