@@ -83,24 +83,23 @@ while True:
                         D = (b ** 2) - (4 * a * c)
                         if D > 0:
                             if sqrt(D) in spic and a > 0:
-                                
                                 break
                             else:
-                                pass
-                                
+                                pass      
                         else:
-                            
                             break    
                 if D > 0:
                     if sqrt(D) in spic:
                         x1 = (-b - sqrt(D)) / (2 * a)
                         x2 = (-b + sqrt(D)) / (2 * a)
                         determine = 1
-                        if b >= 0:
+                        sign1 = '+'
+                        sign2 = '+'
+                        if b < 0:
                             sign1 = '+'
-                        if c >= 0:
+                        if c < 0:
                             sign2 = '+'    
-                        square_equation()
+                        print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
                         if player_solution() == D:     
                             print('Верно, теперь введите корни')
                             determine = 3
