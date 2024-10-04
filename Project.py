@@ -1,9 +1,5 @@
 from math import sqrt
 from random import randint
-def square_equation():
-    sign1 = ''
-    sign2 = ''
-    print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
 def player_solution():
     match determine:                                 
         case 1:
@@ -71,10 +67,10 @@ while True:
             a = randint(1,9)
             b = randint(-9,9)
             c = randint(-9,9)
-            spic = tuple(range(1, 101)) 
+            list = tuple(range(1, 101)) 
             D = (b ** 2) - (4 * a * c)         
             if D > 0:                               
-                if sqrt(D) not in spic:
+                if sqrt(D) not in list:
                     while True:              
                         j = randint(-1,1)               #изменяю a b c для удовлетворительного значения D
                         a += j 
@@ -82,23 +78,23 @@ while True:
                         c += j 
                         D = (b ** 2) - (4 * a * c)
                         if D > 0:
-                            if sqrt(D) in spic and a > 0:
+                            if sqrt(D) in list and a > 0:
                                 break
                             else:
                                 pass      
                         else:
                             break    
                 if D > 0:
-                    if sqrt(D) in spic:
+                    if sqrt(D) in list:
                         x1 = (-b - sqrt(D)) / (2 * a)
                         x2 = (-b + sqrt(D)) / (2 * a)
                         determine = 1
                         sign1 = '+'
                         sign2 = '+'
                         if b < 0:
-                            sign1 = '+'
+                            sign1 = ''
                         if c < 0:
-                            sign2 = '+'    
+                            sign2 = ''    
                         print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
                         if player_solution() == D:     
                             print('Верно, теперь введите корни')
@@ -115,14 +111,26 @@ while True:
                         else:               
                             print('Неверно!')
             if D < 0:
-                square_equation()
+                sign1 = '+'
+                sign2 = '+'
+                if b < 0:
+                    sign1 = ''
+                if c < 0:
+                    sign2 = ''    
+                print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
                 determine = 1
                 if D == player_solution():
                     print('правильно, корней нет')
                 else:
                     print('Неверно!')
             if D == 0:
-                square_equation()
+                sign1 = '+'
+                sign2 = '+'
+                if b < 0:
+                    sign1 = ''
+                if c < 0:
+                    sign2 = ''    
+                print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
                 determine = 1
                 if D == player_solution():
                     determine = 3
