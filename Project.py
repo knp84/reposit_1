@@ -109,7 +109,7 @@ while True:
                             else:
                                 print('Неверно!')        
                         else:               
-                            print('Неверно!')
+                            print(f'Неправильно. Дискриминант равен {D}.')
             if D < 0:
                 sign1 = '+'
                 sign2 = '+'
@@ -120,9 +120,9 @@ while True:
                 print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
                 determine = 1
                 if D == player_solution():
-                    print('Правильно. ' f'Дискриминант равен {D}. ' 'Корней нет')
+                    print(f'Правильно. Дискриминант равен {D}. Корней нет')
                 else:
-                    print('Неправильно. ' f'Дискриминант равен {D}. ' 'Корней нет')
+                    print(f'Неправильно. Дискриминант равен {D}. Корней нет')
             if D == 0:
                 sign1 = '+'
                 sign2 = '+'
@@ -141,12 +141,14 @@ while True:
                             case _:
                                 print('Неверно!')
                 else:
-                    print('Неверно')
+                    print(f'Неправильно. Дискриминант равен {D}.')
         case _:
             print('Выберете один из существующих уровней сложности!')
-    end_cycle = input('Хотите попробовать еще раз? ')
+    end_cycle = input('Хотите попробовать еще раз? да/нет')
     match end_cycle:
         case 'да':
             continue
-        case _:
+        case 'нет':
             break
+        case _:
+            print('Напишите да/нет')
