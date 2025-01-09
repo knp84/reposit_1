@@ -144,11 +144,11 @@ while True:
                     print(f'Неправильно. Дискриминант равен {D}.')
         case _:
             print('Выберете один из существующих уровней сложности!')
-    end_cycle = input('Хотите попробовать еще раз? да/нет')
+    end_cycle = input('Хотите попробовать еще раз? да/нет\n')
     match end_cycle:
         case 'да':
             continue
         case 'нет':
             break
-        case _:
-            print('Напишите да/нет')
+        
+
