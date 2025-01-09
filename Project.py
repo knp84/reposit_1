@@ -10,7 +10,7 @@ def player_solution():
                 return print('Ошибка ввода! Введите число!')                
         case 2:
             try:
-                solution = float(input('Введите х:'))
+                solution = float(input('Введите х: '))
                 return solution
             except:
                 print('Введите число с плавающей точкой!')
@@ -35,9 +35,9 @@ while True:
             addition = a + b
             print(f'Введите сумму чисел {a} и {b}: ')
             if player_solution() == addition:                
-                print(f'да, {a} + {b} = {addition}')         
+                print(f'Правильно. {a} + {b} = {addition}')         
             else:
-                print('Неверный ответ!', addition)  
+                print(f'Неверно. {a} + {b} = {addition}')  
         case '2':                         
             a = randint(0,10)
             b = randint(1,10)
@@ -45,9 +45,9 @@ while True:
             determine = 1
             print(f'Введите произведение чисел {a} и {b}: ')
             if player_solution() == multiply:
-                print(f'да, {a} * {b} = {multiply}')
+                print(f'Правильно. {a} * {b} = {multiply}')
             else:
-                print('Неверный ответ!', multiply)      
+                print(f'Неправильно. {a} * {b} = {multiply}')      
         case '3':
             a = randint(1,10)
             b = randint(-100,100)
@@ -60,9 +60,9 @@ while True:
                 sing = ''              # знаки в уравнении 
             print(f'{a}x{sing}{b} = 0', 'округлите x до первого знака после запятой', sep='\n')
             if player_solution() == round(x, 1):
-                print('Верный ответ!')
+                print(f'Правильно. Корень уровнения равен {round(x, 1)}')
             else:
-                print('Неверный ответ!', round(x, 1))
+                print(f'Неравильно. Корень уровнения равен {round(x, 1)}')
         case '4':    
             a = randint(1,9)
             b = randint(-9,9)
@@ -95,15 +95,15 @@ while True:
                             sign1 = ''
                         if c < 0:
                             sign2 = ''    
-                        print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
+                        print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0', 'Введите дискриминант уравнения:', sep='\n')
                         if player_solution() == D:     
-                            print('Верно, теперь введите корни')
+                            print(f'Верно. Дискриминант равен {D}', 'Tеперь введите корни уравнения в порядке возрастания:', sep='\n')
                             determine = 3
                             link = input()
                             if player_solution() == int(x1) or player_solution() == round(x1, 1):
                                 link = input()
                                 if player_solution() == int(x2) or player_solution() == round(x2, 1):
-                                    print('Верно!')
+                                    print('Правильно. ')
                                 else: 
                                     print('Неверно!')
                             else:
@@ -120,9 +120,9 @@ while True:
                 print(f'{a}x^2 {sign1}{b}x {sign2}{c} = 0')
                 determine = 1
                 if D == player_solution():
-                    print('правильно, корней нет')
+                    print('Правильно. ' f'Дискриминант равен {D}. ' 'Корней нет')
                 else:
-                    print('Неверно!')
+                    print('Неправильно. ' f'Дискриминант равен {D}. ' 'Корней нет')
             if D == 0:
                 sign1 = '+'
                 sign2 = '+'
