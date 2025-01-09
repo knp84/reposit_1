@@ -25,6 +25,7 @@ def player_solution():
             except:
                 print('err') 
                 return player_x 
+print("В программе существует 4 уровня сложности.\n первый - сложение\n второй - умножение\n третий - уравнение\n четвертый - квадратные уравнения")
 while True:
     choise_dif = input('Выберите сложность задачи от 1 до 4: ') 
     match choise_dif: 
@@ -39,8 +40,8 @@ while True:
             else:
                 print(f'Неверно. {a} + {b} = {addition}')  
         case '2':                         
-            a = randint(0,10)
-            b = randint(1,10)
+            a = randint(0,50)
+            b = randint(1,20)
             multiply = a * b
             determine = 1
             print(f'Введите произведение чисел {a} и {b}: ')
