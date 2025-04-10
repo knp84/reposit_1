@@ -1,6 +1,6 @@
 from math import sqrt
 from random import randint
-def player_solution():
+def player_solution(determine):
     match determine:                                 
         case 1:
             try:
@@ -32,10 +32,9 @@ while True:
         case '1':                                   
             a = randint(0,100)
             b = randint(0,100)
-            determine = 1
             addition = a + b
             print(f'Введите сумму чисел {a} и {b}: ')
-            if player_solution() == addition:                
+            if player_solution(1) == addition:                
                 print(f'Правильно. {a} + {b} = {addition}')         
             else:
                 print(f'Неверно. {a} + {b} = {addition}')  
@@ -43,16 +42,14 @@ while True:
             a = randint(0,50)
             b = randint(1,20)
             multiply = a * b
-            determine = 1
             print(f'Введите произведение чисел {a} и {b}: ')
-            if player_solution() == multiply:
+            if player_solution(1) == multiply:
                 print(f'Правильно. {a} * {b} = {multiply}')
             else:
                 print(f'Неправильно. {a} * {b} = {multiply}')      
         case '3':
             a = randint(1,10)
             b = randint(-100,100)
-            determine = 2
             z = -b
             x = z / a               # решения уравнения 
             if b > 0:
@@ -60,7 +57,7 @@ while True:
             else:
                 sing = ''              # знаки в уравнении 
             print(f'{a}x{sing}{b} = 0', 'округлите x до первого знака после запятой', sep='\n')
-            if player_solution() == round(x, 1):
+            if player_solution(2) == round(x, 1):
                 print(f'Правильно. Корень уровнения равен {round(x, 1)}')
             else:
                 print(f'Неравильно. Корень уровнения равен {round(x, 1)}')
@@ -152,5 +149,3 @@ while True:
             continue
         case 'нет':
             break
-        
-
